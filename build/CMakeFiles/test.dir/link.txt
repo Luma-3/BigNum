@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test.dir/source/main.cpp.o CMakeFiles/test.dir/source/BigInt/BigInt.cpp.o CMakeFiles/test.dir/source/BigInt/print.cpp.o CMakeFiles/test.dir/source/BigInt/operatorArithmetic.cpp.o -o test

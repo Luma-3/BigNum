@@ -1,0 +1,3 @@
+/home/luma/Documents/Github/BigNumberTest/build/CMakeFiles/test.dir
+/home/luma/Documents/Github/BigNumberTest/build/CMakeFiles/edit_cache.dir
+/home/luma/Documents/Github/BigNumberTest/build/CMakeFiles/rebuild_cache.dir
