@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/luma/Documents/Github/BigNum/build",
+  "command": "/usr/bin/clang++ -I/home/luma/Documents/Github/BigNum/include -g -std=gnu++98 -o CMakeFiles/test.dir/source/main.cpp.o -c /home/luma/Documents/Github/BigNum/source/main.cpp",
+  "file": "/home/luma/Documents/Github/BigNum/source/main.cpp",
+  "output": "CMakeFiles/test.dir/source/main.cpp.o"
+},
+{
+  "directory": "/home/luma/Documents/Github/BigNum/build",
+  "command": "/usr/bin/clang++ -I/home/luma/Documents/Github/BigNum/include -g -std=gnu++98 -o CMakeFiles/test.dir/source/BigInt/BigInt.cpp.o -c /home/luma/Documents/Github/BigNum/source/BigInt/BigInt.cpp",
+  "file": "/home/luma/Documents/Github/BigNum/source/BigInt/BigInt.cpp",
+  "output": "CMakeFiles/test.dir/source/BigInt/BigInt.cpp.o"
+},
+{
+  "directory": "/home/luma/Documents/Github/BigNum/build",
+  "command": "/usr/bin/clang++ -I/home/luma/Documents/Github/BigNum/include -g -std=gnu++98 -o CMakeFiles/test.dir/source/BigInt/print.cpp.o -c /home/luma/Documents/Github/BigNum/source/BigInt/print.cpp",
+  "file": "/home/luma/Documents/Github/BigNum/source/BigInt/print.cpp",
+  "output": "CMakeFiles/test.dir/source/BigInt/print.cpp.o"
+},
+{
+  "directory": "/home/luma/Documents/Github/BigNum/build",
+  "command": "/usr/bin/clang++ -I/home/luma/Documents/Github/BigNum/include -g -std=gnu++98 -o CMakeFiles/test.dir/source/BigInt/operation.cpp.o -c /home/luma/Documents/Github/BigNum/source/BigInt/operation.cpp",
+  "file": "/home/luma/Documents/Github/BigNum/source/BigInt/operation.cpp",
+  "output": "CMakeFiles/test.dir/source/BigInt/operation.cpp.o"
+},
+{
+  "directory": "/home/luma/Documents/Github/BigNum/build",
+  "command": "/usr/bin/clang++ -I/home/luma/Documents/Github/BigNum/include -g -std=gnu++98 -o CMakeFiles/test.dir/source/BigInt/operatorArithmetic.cpp.o -c /home/luma/Documents/Github/BigNum/source/BigInt/operatorArithmetic.cpp",
+  "file": "/home/luma/Documents/Github/BigNum/source/BigInt/operatorArithmetic.cpp",
+  "output": "CMakeFiles/test.dir/source/BigInt/operatorArithmetic.cpp.o"
+}
+]

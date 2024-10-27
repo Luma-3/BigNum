@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 20:35:56 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/10/23 21:18:07 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/10/27 12:00:37 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,49 +62,117 @@
 
 int main()
 {
+	// Test Div
+	BigInt a(3456789);
+	BigInt b(123456);
 
-	// std::array<u_int8_t, SIZE> num1 = {0x00, 0x00, 0xA3, 0x00};
-	// std::cout << "Num1: " << HexToInt(num1) << std::endl;
-	// std::cout << "Num1 Binary: ";
-	// for (int i = 0; i < SIZE; ++i) {
-	// 	printBinary(num1[i]);
-	// }
-	// std::cout << std::endl;
-
-	// std::array<u_int8_t, SIZE> num2 = {0x00, 0x00, 0xB2, 0x00};
-	// std::cout << "Num2: " << HexToInt(num2) << std::endl;
-	// std::cout << "Num2 Binary: ";
-	// for (int i = 0; i < SIZE; ++i) {
-	// 	printBinary(num2[i]);
-	// }
-	// std::cout << std::endl;
-
-	// std::array<u_int8_t, 2 * SIZE> result;
-
-	// mult(num1, num2, result);
-
-	// std::cout << "Result: " << HexToInt(result) << std::endl;
-
-	Int num(340000);
-	Int num2(340000);
-
-	std::cout << "Binary: ";
-	num.printBinary();
-	std::cout << std::endl;
-
-	std::cout << "Decimal: ";
-	num.printDecimal();
-	std::cout << std::endl;
-
-	std::cout << "Hexa: ";
-	num.printHex();
-	std::cout << std::endl;
-
-	Int result = num + num2;
-
-	std::cout << "Result: ";
-	result.printBinary();
-	std::cout << std::endl;
-
-	return 0;
+	BigInt c = a / b;
+	c.printDecimal();
 }
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+// std::string bigIntToDecimalString(const std::vector<bytes> &bytes1)
+// {
+// 	std::vector<bytes> number(bytes1); // Copie du nombre pour manipulation
+// 	std::string		   result;
+
+// 	// Tant que le nombre n'est pas réduit à zéro
+// 	while (!number.empty() && !(number.size() == 1 && number[0] == 0)) {
+// 		int remainder = 0;
+
+// 		// Division en cascade par 10
+// 		for (size_t i = 0; i < number.size(); ++i) {
+// 			std::cout << "number[i] : " << '0' + number[i] << std::endl;
+// 			int current = remainder * 256 +
+// 						  number[i];  // Intègre le retenu à l'octet actuel
+// 			number[i] = current / 10; // Met à jour l'octet avec le quotient
+// 			remainder = current % 10; // Calcul du reste pour le prochain octet
+// 		}
+
+// 		// Supprime les zéros non-significatifs
+// 		while (!number.empty() && number[0] == 0) {
+// 			number.erase(number.begin());
+// 		}
+
+// 		// Ajoute le chiffre de l'unité trouvé
+// 		result.insert(result.begin(), '0' + remainder);
+// 	}
+
+// 	return result.empty() ? "0" : result;
+// }
+
+// std::string bigIntToDecimalStringLittleEndian(const std::vector<bytes>
+// &bytes1)
+// {
+// 	std::vector<bytes> number(bytes1); // Copie du nombre pour manipulation
+// 	std::string		   result;
+
+// 	// Tant que le nombre n'est pas réduit à zéro
+// 	while (!number.empty() && !(number.size() == 1 && number[0] == 0)) {
+// 		int remainder = 0;
+
+// 		// Division en cascade par 10 en partant de l'octet le moins
+// 		// significatif
+// 		for (size_t i = 0; i < number.size(); ++i) {
+// 			int current = remainder * 256 +
+// 						  number[i];  // Intègre le retenu à l'octet actuel
+// 			number[i] = current / 10; // Met à jour l'octet avec le quotient
+// 			remainder = current % 10; // Calcul du reste pour le prochain octet
+// 		}
+
+// 		// Supprime les zéros non-significatifs
+// 		while (!number.empty() && number.back() == 0) {
+// 			number.pop_back();
+// 		}
+
+// 		// Ajoute le chiffre de l'unité trouvé
+// 		result.insert(result.begin(), '0' + remainder);
+// 	}
+
+// 	return result.empty() ? "0" : result;
+// }
+
+// int main()
+// {
+// 	// Exemple de nombre très grand : 0x0504030201 (little-endian)
+// 	std::vector<bytes> bigNumber;
+
+// 	bigNumber.push_back(0x05);
+// 	bigNumber.push_back(0x04);
+// 	bigNumber.push_back(0x03);
+// 	bigNumber.push_back(0x02);
+// 	bigNumber.push_back(0x01);
+
+// 	std::string decimalRepresentation =
+// 		bigIntToDecimalStringLittleEndian(bigNumber);
+// 	std::cout << "Représentation décimale : " << decimalRepresentation
+// 			  << std::endl;
+
+// 	return 0;
+// }
+
+// int main()
+// {
+// 	// Exemple de nombre très grand : 0x0102030405 (big endian)
+// 	std::vector<bytes> bigNumber;
+
+// 	bigNumber.push_back(0x05);
+// 	bigNumber.push_back(0x30);
+// 	bigNumber.push_back(0x20);
+
+// 	for (const auto &byte : bigNumber) {
+// 		std::cout << std::hex << static_cast<int>(byte) << " ";
+// 	}
+
+// 	std::string decimalRepresentation = bigIntToDecimalString(bigNumber);
+// 	std::cout << "Représentation décimale : " << decimalRepresentation
+// 			  << std::endl;
+
+// 	return 0;
+// }
+
+// 2147483647
+// 4328719365

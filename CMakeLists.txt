@@ -9,6 +9,7 @@ add_executable(test
 	source/main.cpp
 	source/BigInt/BigInt.cpp
 	source/BigInt/print.cpp
+	source/BigInt/operation.cpp
 	source/BigInt/operatorArithmetic.cpp)
 
 target_include_directories(test PRIVATE include)

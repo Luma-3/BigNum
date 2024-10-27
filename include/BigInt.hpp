@@ -6,7 +6,7 @@
 /*   By: jbrousse <jbrousse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 19:29:31 by jbrousse          #+#    #+#             */
-/*   Updated: 2024/10/23 21:11:35 by jbrousse         ###   ########.fr       */
+/*   Updated: 2024/10/27 11:57:36 by jbrousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,45 @@
 
 #include <cstddef>
 
-typedef unsigned char bytes;
+typedef unsigned char	   bytes;
+typedef unsigned short int u_16int;
+
+#define MASK16 0x10000
+#define MASK8  0x100
 
 class BigInt
 {
   private:
 	bytes			  *m_num;
-	int				   m_size;
+	size_t			   m_size;
 	bool			   m_negative;
 	static const bytes m_mask = 0xFF;
+
+	BigInt(bytes *num, size_t size, bool negative);
 
 	void resize(int size);
 	void copy(const BigInt &other);
 	void clear();
 
-	static bytes *IntToBytes(int num, int &size, bool &negative);
+	static bytes *IntToBytes(int num, size_t &size, bool &negative);
 
-	static bytes *add(const bytes *num1, int size1, const bytes *num2,
-					  int size2, int &size);
-	static bytes *sub(const bytes *num1, int size1, const bytes *num2,
-					  int size2, int &size);
-	static bytes *mult(const bytes *num1, int size1, const bytes *num2,
-					   int size2, int &size);
+	static bytes *add(const bytes *num1, size_t size1, const bytes *num2,
+					  size_t size2, size_t &size);
+	static bytes *sub(const bytes *num1, size_t size1, const bytes *num2,
+					  size_t size2, size_t &size);
+	static bytes *mult(const bytes *num1, size_t size1, const bytes *num2,
+					   size_t size2, size_t &size);
+	static bytes *div(const bytes *num1, size_t size1, const bytes *num2,
+					  size_t size2, size_t &size);
 
-	int compare(const bytes *num1, int size1, const bytes *num2,
-				int size2) const;
+	static int compare(const bytes *num1, size_t size1, const bytes *num2,
+					   size_t size2);
 
   public:
 	BigInt();
 	BigInt(int num);
 	BigInt(const BigInt &other);
+
 	~BigInt();
 
 	BigInt &operator=(const BigInt &other);
